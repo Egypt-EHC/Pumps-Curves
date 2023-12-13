@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<Head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pumps Curves</title>
+    <style>
+        /* Style the tabs */
+        .tab {
+            display: none;
+        }
+
+        /* Style the button that opens the tab */
+        .tab-button {
+            background-color: #f2f2f2;
+            border: 1px solid #ccc;
+            padding: 10px;
+            cursor: pointer;
+            text-decoration: underline;
+            
+        }
+
+        /* Style the active tab button */
+        .active {
+            background-color: #ddd;
+        }
+
+        /* Style the tab content */
+        .tab-content {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ccc;
+
+        }
+
+        /* Show the active tab content */
+        .active-content {
+            display:block;
+        }
+        .tab-container {
+            text-align: center;
+        }
+    </style>
+<div style="display: flex; align-items:center;justify-content: space-between;">
+    <img src="https://images.wuzzuf-data.net/files/company_logo/Egypt-Hydrocarbon-Corporation--EHC--Egypt-54196-1594233838-og.jpg" alt="Logo" width="200" height="110">
+    <h4 style="text-align: left; margin-left: 10px;">Technical Department
+ 
+        <br> Title : </br>
+        <br> Digitilization Pump's Performance Curves Project</br>
+    </h4>
+
+</div>
+        
+        <h4 style="text-align: center;">Efficiency & Power Data Extracted from Performance Curves </h4>
+</Head>
+<body>
+<div class="tab-container">
+<button class="tab-button" onclick="openTab('NA')">NA</button>
+<button class="tab-button" onclick="openTab('AN')">AN</button>
+<button class="tab-button" onclick="openTab('UT')">O&U</button>
+</div>
+<div id="NA" class="tab-content active-content">
+  
+        <H1 style="background-color: rgb(0, 115, 255);font-style: italic;text-decoration-style: wavy;text-align: center;color: beige;">Nitric Acid Pumps</H1>
+        <H2>Pump : 
+    <select id="Pumps" name="Pumps">
+        <option value="12P004 ">12P004</option>
+        <option value="12P006 ">12P006</option>
+        <option value="12P007 ">12P007</option>
+        <option value="12P008 ">12P008</option>
+        <option value="12P009 ">12P009</option>
+        <option value="51P001 ">51P001</option>
+        <option value="52P001 ">52P001</option>
+    </select>
+        </H2>
+        Flow: <input type="number" id="myNumber" value="40">
+
+        <button onclick="myFunction()">Calculate</button>
+
+        <p> The Pump ETA  = </p><p id="ETA"></p>
+        <p> The Pump P = </p><p id="P"></p>
+        <script>
+        function myFunction() {
+            let x = parseFloat(document.getElementById("myNumber").value);
+            let value = document.getElementById("Pumps").value; // Assuming there is a select element with id "mySelect"
+        
+            if (value === "12P004 ") {
+                document.getElementById("ETA").innerHTML = (-0.0003 * x**2 + 0.3146 * x + 2.9006);
+                document.getElementById("P").innerHTML = (-0.0000001 * x**3) + 0.0001 * x**2 + 0.0073 * x + 23.481;
+            } else if (value === "12P006 ") {
+                document.getElementById("ETA").innerHTML = -0.0216 * x**2 + 2.4336 * x + 3.3453;
+                document.getElementById("P").innerHTML = 1.4724 * x + 62.417;
+            } else if (value === "12P007 ") {
+                document.getElementById("ETA").innerHTML = (0.00004*x**3) - (0.0259*x**2) + (2.3701*x) - 0.8186;
+                document.getElementById("P").innerHTML = (0.2214*x) + 12.654;
+            } else if (value === "12P008 ") {
+                document.getElementById("ETA").innerHTML = -(0.0565*x**2) + (2.5948*x) + 0.3749;
+                document.getElementById("P").innerHTML = (0.5346*x) + 17.252;
+            } else if (value === "12P009 ") {
+            document.getElementById("ETA").innerHTML = (0.0002*x**3) - (0.0423*x**2) + (3.0151*x) + 0.343;
+            document.getElementById("P").innerHTML = (0.0894*x) + 3.9756;
+        } else if (value === "51P001 ") {
+                document.getElementById("ETA").innerHTML = (0.00008*x**3) - (0.0271*x**2) +(2.3233*x) - 3.1323;
+                document.getElementById("P").innerHTML = -(0.0014*x**2) + (0.3609*x) + 15.095;
+            } else if (value === "52P001 ") {
+            document.getElementById("ETA").innerHTML = Math.round(-(0.0487*x**2) + (3.1697*x) + 5.5011);
+            document.getElementById("P").innerHTML = Math.round(-(0.0003*x**3) + (0.013*x**2) + (0.1995*x) + 17.008);
+        }
+        }
+        </script>
+</div>
+<div id="AN" class="tab-content">
+
+        <H1 style="background-color: rgb(0, 115, 255);font-style: italic;text-decoration-style: wavy;text-align: center;color: beige;">Ammonium Nitrate Pumps</H1>
+        <H2>Pump : 
+        <select id="Pumps1" name="Pumps">
+        <option value="31P001 ">31P001</option>
+        <option value="31P002 ">31P002</option>
+        <option value="31P004 ">31P004</option>
+        <option value="31P006 ">31P006</option>
+        <option value="31P007 ">31P007</option>
+        <option value="32P002 ">32P002</option>
+        <option value="32P003 ">32P003</option>
+        <option value="32P005 ">32P005</option>
+        </select>
+        </H2>
+        Flow: <input type="number" id="myNumber1" value="40">
+    
+        <button onclick="myFunction1()">Calculate</button>
+    
+        <p> The Pump ETA  = </p><p id="ETA1"></p>
+        <p> The Pump P = </p><p id="P1"></p>
+        <script>
+        function myFunction1() {
+            let x1 = parseFloat(document.getElementById("myNumber1").value);
+            let value1 = document.getElementById("Pumps1").value; // Assuming there is a select element with id "mySelect"
+        
+            if (value1 === "31P001 ") {
+            document.getElementById("ETA1").innerHTML = -(0.00008*x1**2) + (0.025*x1) + 67.534;
+            document.getElementById("P1").innerHTML = (0.0000001*x1**2) + (0.0128*x1) + 30.524;
+            } else if (value1 === "31P002 ") {
+            document.getElementById("ETA1").innerHTML = -(0.0214*x1**2) + (2.3867*x1) + 3.0332;
+            document.getElementById("P1").innerHTML =  (0.0979*x1) + 4.4729;
+            } else if (value1 === "31P004 ") {
+            document.getElementById("ETA1").innerHTML = -(0.0142*x1**2) + (1.605*x1) + 0.0718;
+            document.getElementById("P").innerHTML = (0.1574*x1) + 9.2411;
+            } else if (value1 === "31P006 ") {
+            document.getElementById("ETA1").innerHTML = -(0.4612*x1**2) + (7.4506*x1) - 0.9444;
+            document.getElementById("P1").innerHTML = (0.0966*x1) + 1.4826;
+            } else if (value1 === "31P007 ") {
+            document.getElementById("ETA1").innerHTML = -(0.000001*x1**3) - (0.0041*x1**2) + (0.9778*x1) + 1.7844;
+            document.getElementById("P1").innerHTML = (0.2029*x1) + 28.222;
+            } else if (value1 === "32P002 ") {
+            document.getElementById("ETA1").innerHTML = -(0.00000006*x1**3) - (0.0003*x1**2) + (0.3268*x1) + 1.1173;
+            document.getElementById("P1").innerHTML = (0.076*x1) + 34.237;
+            } else if (value1 === "32P003 ") {
+            document.getElementById("ETA1").innerHTML = Math.round(-(0.00000006*x1**3) - (0.0004*x1**2) + (0.3751*x1) - 1.771);
+            document.getElementById("P1").innerHTML = Math.round((0.0634*x1) + 29.796);
+            }else if (value1 === "32P005 ") {
+            document.getElementById("ETA1").innerHTML = Math.round( -(0.005*x1**2) + (1.094*x1) +1.7299);
+            document.getElementById("P1").innerHTML = Math.round((0.2141*x1) + 18.38);
+            }
+        }
+        </script>
+</div>
+<div id="UT" class="tab-content ">
+
+        <H1 style="background-color: rgb(0, 115, 255);font-style: italic;text-decoration-style: wavy;text-align: center;color: beige;">Utilities Pumps</H1>
+        <H2>Pump : 
+        <select id="Pumps2" name="Pumps">
+        <option value="87P001 ">87P001</option>
+        <option value="88P001 ">88P001</option>
+        <option value="89P002 ">89P002</option>
+        <option value="89P004 ">89P004</option>
+        <option value="89P005 ">89P005</option>
+        <option value="89P311 ">89P311</option>
+        <option value="89P321 ">89P321</option>
+        <option value="89P331 ">89P331</option>
+        <option value="93P001 ">93P001</option>
+        </select>
+        </H2>
+        Flow: <input type="number" id="myNumber2" value="40">
+    
+        <button onclick="myFunction2()">Calculate</button>
+    
+        <p> The Pump ETA  = </p><p id="ETA2"></p>
+        <p> The Pump P = </p><p id="P2"></p>
+        <script>
+        function myFunction2() {
+            let x2 = parseFloat(document.getElementById("myNumber2").value);
+            let value2 = document.getElementById("Pumps2").value; // Assuming there is a select element with id "mySelect"
+        
+            if (value2 === "87P001 ") {
+            document.getElementById("ETA2").innerHTML = (0.00000000000007*x2**4) - (0.0000000005*x2**3) - (0.00001*x2**2) + (0.0636*x2) - 7.7302;
+            document.getElementById("P2").innerHTML = (0.0261*x2) + 173.14;
+            } else if (value2 === "88P001 ") {
+            document.getElementById("ETA2").innerHTML = -(0.00002*x2**2) + (0.0842*x2) - 5.9976;
+            document.getElementById("P2").innerHTML = (0.0707*x2) + 163.41;
+            } else if (value2 === "89P002 ") {
+            document.getElementById("ETA2").innerHTML = -(0.0041*x2**2) + (1.1517*x2) + 0.0193;
+            document.getElementById("P2").innerHTML = (0.0615*x2) + 11.385;
+            } else if (value2 === "89P004 ") {
+            document.getElementById("ETA2").innerHTML = -(0.005*x2**2) + (1.0859*x2) + 3.3278;
+            document.getElementById("P2").innerHTML = (0.2099*x2) + 18.523;
+            } else if (value2 === "89P005 ") {
+            document.getElementById("ETA2").innerHTML = -(0.0051*x2**2) + (1.1135*x2) + 2.1384;
+            document.getElementById("P2").innerHTML = (0.2068*x2) + 18.719;
+            } else if (value2 === "89P311 ") {
+            document.getElementById("ETA2").innerHTML = -(0.0013*x2**2) + (0.2485*x2) + 84.789;
+            document.getElementById("P2").innerHTML = (0.00005*x2**3) - (0.0092*x2**2) + (1.9309*x2) - 4.9261;
+            } else if (value2 === "89P321 ") {
+            document.getElementById("ETA2").innerHTML = -(0.0013*x2**2) + (0.2485*x2) + 84.789;
+            document.getElementById("P2").innerHTML = (0.00005*x2**3) - (0.0092*x2**2) + (1.9309*x2) - 4.9261;
+            }else if (value2 === "89P331 ") {
+            document.getElementById("ETA2").innerHTML = -(0.0013*x2**2) + (0.2485*x2) + 84.789;
+            document.getElementById("P2").innerHTML = (0.00005*x2**3) - (0.0092*x2**2) + (1.9309*x2) - 4.9261;
+            }else if (value2 === "93P001 ") {
+            document.getElementById("ETA2").innerHTML = Math.round(-(0.0472*x2**2) + (2.6543*x2) + 0.0358);
+            document.getElementById("P2").innerHTML = Math.round( (0.2593*x2) + 11.317);
+            }
+        }
+        </script>
+</div>
+<script>
+    function openTab(tabName) {
+        // Hide all tabs and reset button styles
+        var tabs = document.getElementsByClassName('tab-content');
+        for (var i = 0; i < tabs.length; i++) {
+            tabs[i].style.display = 'none';
+        }
+
+        var buttons = document.getElementsByClassName('tab-button');
+        for (var i = 0; i < buttons.length; i++) {
+            buttons[i].classList.remove('active');
+        }
+
+        // Show the selected tab and set button style to active
+        document.getElementById(tabName).style.display = 'block';
+        event.currentTarget.classList.add('active');
+    }
+</script>
+</body>
+</html>
