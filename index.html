@@ -127,6 +127,12 @@
         Flow: <input type="number" id="myNumber1" value="40">
     
         <button onclick="myFunction1()">Calculate</button>
+        <form action="upload.php" method="post" enctype="multipart/form-data">
+        <label for="file">Select Excel Sheet:</label>
+        <input type="file" id="file" name="file" accept=".xls, .xlsx" required>
+
+        <button type="submit">Upload</button>
+    </form>
     
         <p> The Pump ETA  = </p><p id="ETA1"></p>
         <p> The Pump P = </p><p id="P1"></p>
